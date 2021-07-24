@@ -73,6 +73,7 @@ class _AddProductPageState extends State<AddProductPage> {
                 ),
                 CustomTextFieldWidget(
                   label: 'Nome do produto *',
+                  textCapitalization: TextCapitalization.sentences,
                   textEditingController: nameController,
                   validator: widget.controller.nameValidator,
                 ),
@@ -84,6 +85,7 @@ class _AddProductPageState extends State<AddProductPage> {
                     Expanded(
                       child: CustomTextFieldWidget(
                         label: 'Preço (R\$) *',
+                        keyboardType: TextInputType.number,
                         textEditingController: priceController,
                         validator: widget.controller.priceValidator,
                       ),
@@ -94,6 +96,7 @@ class _AddProductPageState extends State<AddProductPage> {
                     Expanded(
                       child: CustomTextFieldWidget(
                         label: 'Preço de promoção (R\$)',
+                        keyboardType: TextInputType.number,
                         textEditingController: promotionPriceController,
                       ),
                     ),

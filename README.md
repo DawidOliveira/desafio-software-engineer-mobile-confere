@@ -1,4 +1,4 @@
-<p align="center" style="font-size: 30px;">Desafio Software Engineer, Mobile Developer - Confere</p>
+<p align="center" style="font-size: 50px;">Desafio Software Engineer, Mobile Developer - Confere</p>
 
  <p align="center">
  <img src="https://img.shields.io/github/issues/dawidoliveira/desafio-software-engineer-mobile-confere?style=for-the-badge"/>

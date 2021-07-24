@@ -28,8 +28,10 @@ class _AddProductPageState extends State<AddProductPage> {
       final product = widget.controller.getProduct(widget.productId!);
       nameController = TextEditingController(text: product.name);
       priceController = TextEditingController(text: product.price.toString());
-      promotionPriceController =
-          TextEditingController(text: product.promotionPrice.toString());
+      promotionPriceController = TextEditingController(
+          text: product.promotionPrice == null
+              ? ''
+              : product.promotionPrice.toString());
       widget.controller.imgUrl.value = product.imgUrl;
       widget.controller.available.value = product.available;
     } else {

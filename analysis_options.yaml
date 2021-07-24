@@ -1,0 +1,8 @@
+include: package:lint/analysis_options.yaml
+
+linter:
+  rules:
+    sort_pub_dependencies: false
+    sort_child_properties_last: false
+    avoid_setters_without_getters: false
+    unnecessary_string_interpolations: false

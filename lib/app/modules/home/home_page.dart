@@ -54,6 +54,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
               itemBuilder: (context, index) {
                 final product = snapshot.data![index];
                 return ListItemWidget(
+                  available: product.available == 1,
                   controller: controller,
                   name: product.name,
                   price: product.price,

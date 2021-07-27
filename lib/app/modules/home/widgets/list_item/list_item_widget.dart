@@ -17,6 +17,7 @@ class ListItemWidget extends StatelessWidget {
     this.discountPercentage,
     required this.id,
     required this.controller,
+    required this.available,
   }) : super(key: key);
 
   final String id;
@@ -25,6 +26,7 @@ class ListItemWidget extends StatelessWidget {
   final double? promotionPrice;
   final String? imgUrl;
   final double? discountPercentage;
+  final bool available;
   final HomeController controller;
 
   @override
@@ -48,22 +50,22 @@ class ListItemWidget extends StatelessWidget {
         title: Text(name),
         subtitle: RichText(
           text: TextSpan(
-            text: 'R\$ $price',
+            text: '${available ? 'R\$ $price' : 'Produto indisponível'}',
             style: AppTextStyles.subtitle.copyWith(
               color: promotionPrice != null ? Colors.grey : Colors.green,
-              decoration: promotionPrice != null
+              decoration: promotionPrice != null && available
                   ? TextDecoration.lineThrough
                   : TextDecoration.none,
             ),
             children: <InlineSpan>[
-              if (promotionPrice != null)
+              if (promotionPrice != null && available)
                 TextSpan(
                   text: ' - ',
                   style: AppTextStyles.subtitle.copyWith(
                     decoration: TextDecoration.none,
                   ),
                 ),
-              if (promotionPrice != null)
+              if (promotionPrice != null && available)
                 TextSpan(
                     text: 'R\$ $promotionPrice',
                     style: AppTextStyles.subtitle.copyWith(
